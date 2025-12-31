@@ -1,0 +1,136 @@
+
+.landingCont {
+    min-height: 95.5vh;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, #f8fafc, #e2e8f0);
+}
+
+.logo {
+    width: min(90%, 22rem);
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.logopng {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.title {
+    font-size: clamp(1.6rem, 5vw, 2.3rem);
+    font-weight: bold;
+    color: #1e293b;
+    text-align: center;
+    margin-bottom: 0.4rem;
+}
+
+.subtitle {
+    font-size: clamp(0.85rem, 3.5vw, 1rem);
+    color: #475569;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    max-width: 28rem;
+}
+
+.loginBox {
+    width: 100%;
+    max-width: 22rem;
+    background-color: #ffffff;
+    padding: 1.4rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 0.8rem 0;
+}
+
+p {
+    margin: 0;
+}
+
+.inputField {
+    width: 93%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.inputField:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+.loginButton,
+.studentButton {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #3b82f6;
+    color: #ffffff;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+}
+
+.loginButton:hover,
+.studentButton:hover {
+    background-color: #2563eb;
+}
+
+.Or {
+    color: #94a3b8;
+    margin: 0.8rem 0;
+}
+
+.studentinfo {
+    font-size: 0.85rem;
+    color: #245395;
+    background-color: rgba(59, 130, 246, 0.15);
+    border: 1px solid #2563eb;
+    border-radius: 0.5rem;
+    padding: 0.6rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    width: 93%;
+}
+
+.footer {
+    margin-top: 1.2rem;
+    font-size: 0.75rem;
+    color: #64748b;
+    text-align: center;
+}
+
+
+@media (min-width: 768px) {
+
+    .loginBox {
+        padding: 2rem;
+        max-width: 24rem;
+    }
+
+    .subtitle {
+        margin-bottom: 2rem;
+    }
+}
+
+
+@media (max-height: 600px) {
+    .landingCont {
+        justify-content: flex-start;
+        padding-top: 1rem;
+    }
+}

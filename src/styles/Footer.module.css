@@ -1,0 +1,63 @@
+.maincont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem 4rem;
+  height: 3rem;
+
+
+}
+
+
+.copy {
+  font-size: 0.9rem;
+}
+
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+    color: black;
+  text-decoration: none;
+  font-size: 0.9rem;
+
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: #3b82f6;
+}
+
+
+@media (max-width: 768px) {
+  .maincont {
+    padding: 1rem;
+    height: auto;
+    flex-direction: column;
+    gap: 0.8rem;
+    text-align: center;
+  }
+
+  .links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .copy {
+    font-size: 0.8rem;
+  }
+
+  .link {
+    font-size: 0.85rem;
+  }
+}

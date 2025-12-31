@@ -1,0 +1,135 @@
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+
+.modal {
+    background: white;
+    width: 100%;
+    max-width: 520px;
+    border-radius: 0.75rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.closeBtn {
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: #6b7280;
+}
+
+.form {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.field label {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.field span {
+    color: #ef4444;
+}
+
+.field input,
+.field textarea {
+    padding: 0.6rem 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.4rem;
+    font-size: 0.95rem;
+}
+
+.field textarea {
+    resize: none;
+    height: 90px;
+}
+
+.uploadBox {
+    border: 2px dashed #d1d5db;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    text-align: center;
+    color: #6b7280;
+    position: relative;
+    cursor: pointer;
+}
+
+.uploadBox svg {
+    font-size: 1.8rem;
+    margin-bottom: 0.4rem;
+}
+
+.uploadBox p {
+    font-weight: 500;
+}
+
+.uploadBox span {
+    font-size: 0.8rem;
+}
+
+.uploadBox input {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.cancelBtn {
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.4rem;
+    border: 1px solid #d1d5db;
+    background: white;
+    cursor: pointer;
+}
+
+.submitBtn {
+    padding: 0.6rem 1.4rem;
+    border-radius: 0.4rem;
+    border: none;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+}
+
+.submitBtn:hover {
+    background: #1d4ed8;
+}
+
+@media (max-width: 480px) {
+    .modal {
+        margin: 1rem;
+    }
+}
