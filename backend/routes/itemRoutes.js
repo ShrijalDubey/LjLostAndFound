@@ -1,6 +1,6 @@
 import express from 'express';
 
-import {create } from '../controller/itemController.js';
+import { create } from '../controller/itemController.js';
 import { getAllItems } from '../controller/itemController.js';
 import { deleteItem } from '../controller/itemController.js';
 

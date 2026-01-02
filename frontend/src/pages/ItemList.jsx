@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AddItemModal from "./AddItemModal";
+import AddItemModal from "../components/AddItemModal";
 import styles from '../styles/ItemList.module.css'
 import { IoAdd } from "react-icons/io5";
 import { IoLocationOutline } from "react-icons/io5";
@@ -9,9 +9,12 @@ import { FaCheck } from "react-icons/fa6";
 import { MdDeleteOutline } from "react-icons/md";
 import { useEffect } from "react";
 import axios from "axios";
+import TopBrand from "../components/TopBrand";
+import Navbar from "../components/Navbar";  
+import Footer from "../components/Footer";
 
 
-export default function ItemList() {
+export default function ItemList({role,onLogout}) {
   const [showModal, setShowModal] = useState(false);
   const [items, setItems] = useState([]);
 
@@ -43,7 +46,7 @@ export default function ItemList() {
 
   const deleteItem = async (id) => {
     const confirmDelete = window.confirm("Are you sure you want to delete this item?");
-  if (!confirmDelete) return; // user canceled
+  if (!confirmDelete) return;
 
     try {
       await axios.delete(`http://localhost:8000/api/items/${id}`);
@@ -56,10 +59,15 @@ export default function ItemList() {
 
 
   return (
+    <>
+    <TopBrand />
+    <Navbar role={role} onLogout={onLogout} />
     <div className={styles.main}>
       <div className={styles.container}>
-        <h1>Manage Lost Items</h1>
-        <p>Add, edit, and manage lost items reported on campus</p>
+       <h1>{role === "authority" ? "Manage" : ""} Lost Items</h1>
+
+          <p>{role === "authority" ? "Add, edit, and manage lost items on campus" : 
+          "Browse lost items and collect yours from the designated location"}</p>
 
         <div className={styles.menu}>
           <div>
@@ -67,12 +75,15 @@ export default function ItemList() {
             <p className={styles.count}>{totalItems}</p>
           </div>
 
-          <button
-            className={styles.addButton}
-            onClick={() => setShowModal(true)}
-          >     
+          {role === "authority" && (
+            <button
+              className={styles.addButton}
+              onClick={() => setShowModal(true)}
+            >
               <IoAdd /> Add Item
-          </button>
+            </button>
+          )}
+
 
         </div>
         {showModal && (
@@ -103,10 +114,10 @@ export default function ItemList() {
             <div>
               <h2>{item.itemName}</h2>
               
-              <p><IoLocationOutline /> Location: {item.locationLost}</p>
+              <p><IoLocationOutline /> Location : {item.locationLost}</p>
               <p><FiHome /> Collect from : {item.collectFrom}</p>
               <p>
-                <CiCalendarDate /> Date:{" "}
+                <CiCalendarDate /> Date found :{" "}
                 {new Date(item.createdAt).toLocaleDateString()}
               </p>
               <hr />
@@ -114,15 +125,28 @@ export default function ItemList() {
               <hr />
             </div>
 
-            <div className={styles.cardButtons}>
-              <button className={styles.markButton}><FaCheck /> Mark as Collected</button>
-              <button onClick={()=>deleteItem(item._id)} className={styles.deleteButton}><MdDeleteOutline /></button>
-            </div>
+            {role === "authority" && (
+              <div className={styles.cardButtons}>
+                <button className={styles.markButton}>
+                  <FaCheck /> Mark as Collected
+                </button>
+
+                <button
+                  onClick={() => deleteItem(item._id)}
+                  className={styles.deleteButton}
+                >
+                  <MdDeleteOutline />
+                </button>
+              </div>
+            )}
+
           </div>
         </div>
         );
       })}
       </div>
     </div>
+    <Footer />
+    </>
   )
 }
