@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
 import AddItemModal from "../components/AddItemModal";
 import TopBrand from "../components/TopBrand";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ItemHeader from "../components/ItemHeader";
 import ItemGallery from "../components/ItemGallery";
-
 import styles from "../styles/ItemList.module.css";
 
 export default function ItemList({ role, onLogout }) {

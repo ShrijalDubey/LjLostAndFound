@@ -5,7 +5,8 @@ import styles from "../styles/ItemList.module.css";
 export default function ItemHeader({ role, totalItems, onAddClick }) {
   return (
     <>
-      <h1>{role === "authority" ? "Manage" : ""} Lost Items</h1>
+      <h1>Dashboard</h1>
+      <h3>{role === "authority" ? "Manage" : ""} Lost Items</h3>
 
       <p>
         {role === "authority"
