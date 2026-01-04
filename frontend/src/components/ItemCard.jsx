@@ -12,7 +12,7 @@ export default function ItemCard({ item, role, onDelete }) {
     <div className={styles.card}>
       <div className={styles.cardImageContainer}>
         <img
-          src={item.imageUrl || "https://picsum.photos/536/354"}
+          src={item.imageUrl || "https://placehold.co/600x400?text=No+Image"}
           alt={item.itemName}
           className={styles.cardImage}
         />
