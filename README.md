@@ -18,7 +18,6 @@ Students can browse available lost items and see the total count at a glance.
 
 ![Student Dashboard – Lost Items](./screenshots/DashBoard.png)
 
-> *Note: Replace the image paths above with the actual screenshot paths in your repository (e.g., `screenshots/landing-page.png`).*
 
 ---
 
