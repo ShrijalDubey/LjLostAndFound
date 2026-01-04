@@ -10,13 +10,13 @@ A simple, clean, and role-based **Campus Lost & Found web application** designed
 
 Students can continue without login, while authorities authenticate using a secure password.
 
-![Landing Page – Authority & Student Access](./screenshots/landing-page.png)
+![Landing Page – Authority & Student Access](./screenshots/LandingPage.png)
 
 ### Student View – Lost Items Dashboard
 
 Students can browse available lost items and see the total count at a glance.
 
-![Student Dashboard – Lost Items](./screenshots/student-dashboard.png)
+![Student Dashboard – Lost Items](./screenshots/DashBoard.png)
 
 > *Note: Replace the image paths above with the actual screenshot paths in your repository (e.g., `screenshots/landing-page.png`).*
 
