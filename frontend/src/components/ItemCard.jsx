@@ -7,7 +7,7 @@ import { MdDeleteOutline } from "react-icons/md";
 
 import styles from "../styles/ItemList.module.css";
 
-export default function ItemCard({ item, role, onDelete }) {
+export default function ItemCard({ item, role, onDelete, onMarkCollected }) {
   return (
     <div className={styles.card}>
       <div className={styles.cardImageContainer}>
@@ -34,7 +34,10 @@ export default function ItemCard({ item, role, onDelete }) {
 
         {role === "authority" && (
           <div className={styles.cardButtons}>
-            <button className={styles.markButton}>
+            <button 
+              className={styles.markButton}
+              onClick={() => onMarkCollected(item._id)}
+            >
               <FaCheck /> Mark as Collected
             </button>
 

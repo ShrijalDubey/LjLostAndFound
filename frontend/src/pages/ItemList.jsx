@@ -36,6 +36,18 @@ export default function ItemList({ role, onLogout }) {
     }
   };
 
+  const markAsCollected = async (id) => {
+    if (!window.confirm("Mark this item as collected?")) return;
+
+    try {
+      await axios.patch(`http://localhost:8000/api/items/${id}/collect`);
+      setItems((prev) => prev.filter((item) => item._id !== id));
+    } catch (err) {
+      console.error("Error marking item as collected:", err);
+      alert("Failed to mark item as collected. Please try again.");
+    }
+  };
+
   return (
     <>
       <TopBrand />
@@ -54,6 +66,7 @@ export default function ItemList({ role, onLogout }) {
           items={items}
           role={role}
           onDelete={deleteItem}
+          onMarkCollected={markAsCollected}
         />
       </div>
 
