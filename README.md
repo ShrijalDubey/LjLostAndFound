@@ -45,6 +45,8 @@ This project is especially suitable for **college-level deployment** and **acade
 
 * Password-protected access
 * Can add new lost items
+* Can upload item images directly from the UI
+* Can mark items as collected (functional “Mark as Collected” button)
 * Can upload item images
 * Can mark items as collected
 * Can delete items from the system
@@ -57,6 +59,8 @@ This project is especially suitable for **college-level deployment** and **acade
 * Clean and responsive UI
 * Lost item listing with count display
 * Image-based item records
+* Image upload support for items
+* Mark as Collected button is fully functional
 * Secure authority login
 * Logout functionality
 
@@ -75,7 +79,7 @@ This project is especially suitable for **college-level deployment** and **acade
 * Node.js
 * Express.js
 * MongoDB
-* Multer (for image uploads)
+* SupaBase (for image uploads)
 
 ---
 
@@ -133,9 +137,6 @@ npm start
 ## 🔐 Authority Login
 
 * Authority access is protected via a predefined password
-* Password validation is handled securely on the backend
-
-> *For demo or academic purposes, the password can be hardcoded or stored in environment variables.*
 
 ---
 
